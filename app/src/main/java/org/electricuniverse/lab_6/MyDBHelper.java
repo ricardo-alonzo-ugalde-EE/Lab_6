@@ -85,10 +85,11 @@ public class MyDBHelper extends SQLiteOpenHelper
 
     public Contact getContact(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + "WHERE _id" + id;
+        String query = "SELECT  * FROM " + TABLE_NAME + " WHERE _id=" + id;
         Cursor cursor = db.rawQuery(query, null);
         Contact c = new Contact();
-        if (cursor.getCount() > 0) {
+        if (cursor.getCount() > 0)
+        {
             cursor.moveToFirst();
             c.setName(cursor.getString(cursor.getColumnIndex(COLUMN_CONTACT_NAME)));
             c.setLastName(cursor.getString(cursor.getColumnIndex(COLUMN_CONTACT_LASTNAME)));
@@ -101,14 +102,14 @@ public class MyDBHelper extends SQLiteOpenHelper
     public void deleteContact(long id, Context context)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM " + TABLE_NAME + "WHERE _id'"+id+"'");
+        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE _id='"+id+"'");
         Toast.makeText(context, "Deleted successfully.", Toast.LENGTH_SHORT).show();
     }
 
     public void updateContact(long contactId, Context context, Contact contact)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("UPDATE " +TABLE_NAME + "SET name ='" + contact.getName()
+        db.execSQL("UPDATE " +TABLE_NAME + " SET name ='" + contact.getName()
                 + "', lastname = '" + contact.getLastName()
                 + "', phone = '" + contact.getPhoneNumber()
                 + "'WHERE _id= '" + contactId + "'");

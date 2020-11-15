@@ -22,7 +22,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     {
         mContactList = myDataset;
         mContext = context;
-        myRecyclerView =recyclerView;
+        myRecyclerView = recyclerView;
     }
 
     @NonNull
@@ -34,7 +34,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         return view_holder;
     }
 
-    public void updateList(List<Contact>myDataset)
+    public void updateList(List<Contact> myDataset)
     {
         mContactList = myDataset;
         notifyDataSetChanged();
@@ -48,32 +48,59 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         holder.name_v.setText("Name: "+ c.getName());
         holder.last_name_v.setText("Last Name: "+ c.getLastName());
         holder.phone_v.setText("Phone: "+ c.getPhoneNumber());
-        holder.itemView.setOnClickListener((v ->
+        holder.itemView.setOnClickListener(v ->
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
             builder.setTitle("Chose option");
             builder.setMessage("Update or delete user?");
-            builder.setPositiveButton("Update", ((dialog, which) ->
+            builder.setPositiveButton( "Update", (dialog, which) ->
             {
                 goToUpdateActivity(c.getID());
-            }));
-            builder.setNeutralButton("Delete", ((dialog, which) ->
+            });
+            builder.setNeutralButton( "Delete", (dialog, which) ->
             {
-                MyDBHelper dbHelper = new MyDBHelper(mContext);
-                dbHelper.deleteContact(c.getID(), mContext);
-                mContactList.remove(position);
-                myRecyclerView.removeViewAt(position);
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, mContactList.size());
-                notifyDataSetChanged();
-            }));
-            builder.setNegativeButton("Cancel", ((dialog, which) ->
+               MyDBHelper dbHelper = new MyDBHelper(mContext);
+               dbHelper.deleteContact(c.getID(), mContext);
+               mContactList.remove(position);
+               myRecyclerView.removeViewAt(position);
+               notifyItemRemoved(position);
+               notifyItemRangeChanged(position, mContactList.size());
+               notifyDataSetChanged();
+            });
+            builder.setNegativeButton("Cancel", (dialog, which) ->
             {
-                dialog.dismiss();
-            }));
+               dialog.dismiss();
+            });
             builder.create().show();
+        });
 
-        }));
+
+//        holder.itemView.setOnClickListener((v ->
+//        {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+//
+//
+//            builder.setPositiveButton("Update", ((dialog, which) ->
+//            {
+//                goToUpdateActivity(c.getID());
+//            }));
+//            builder.setNeutralButton("Delete", ((dialog, which) ->
+//            {
+//                MyDBHelper dbHelper = new MyDBHelper(mContext);
+//                dbHelper.deleteContact(c.getID(), mContext);
+//                mContactList.remove(position);
+//                myRecyclerView.removeViewAt(position);
+//                notifyItemRemoved(position);
+//                notifyItemRangeChanged(position, mContactList.size());
+//                notifyDataSetChanged();
+//            }));
+//            builder.setNegativeButton("Cancel", ((dialog, which) ->
+//            {
+//                dialog.dismiss();
+//            }));
+//            builder.create().show();
+//
+//        }));
 
     }
 
@@ -87,7 +114,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public int getItemCount()
     {
-        return 0;
+      return mContactList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder

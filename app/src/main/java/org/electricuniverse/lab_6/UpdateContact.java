@@ -34,10 +34,10 @@ public class UpdateContact extends AppCompatActivity
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(ContextCompat.getColor(UpdateContact.this, R.color.colorAccent));
 
-        mNameEditText = (EditText)findViewById(R.id.contactName);
-        mLastNameEditText = (EditText)findViewById(R.id.contactLastName);
-        mPhoneEditText = (EditText)findViewById(R.id.contactPhone);
-        mUpdateBtn = (Button)findViewById(R.id.addNewContactButton);
+        mNameEditText = (EditText)findViewById(R.id.UpdateContactName);
+        mLastNameEditText = (EditText)findViewById(R.id.UpdateContactLastName);
+        mPhoneEditText = (EditText)findViewById(R.id.UpdateContactPhone);
+        mUpdateBtn = (Button)findViewById(R.id.UpdateContactButton);
         dbHelper = new MyDBHelper(this);
         try
         {

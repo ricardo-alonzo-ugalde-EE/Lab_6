@@ -7,23 +7,23 @@
     android:theme="@style/Theme.AppCompat.Dialog"
     tools:context=".UpdateContact">
 
-    <android.inputmethodservice.ExtractEditText
-        android:id="@+id/contactName"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/UpdateContactName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:hint="contact name"
+        android:hint="Update Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <android.inputmethodservice.ExtractEditText
-        android:id="@+id/contactLastName"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/UpdateContactLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -31,14 +31,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:hint="contact Last Name"
+        android:hint="Update Last Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contactName" />
 
-    <android.inputmethodservice.ExtractEditText
-        android:id="@+id/contactPhone"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/UpdateContactPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -46,11 +46,11 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:hint="contact phone"
+        android:hint="Update Phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactLastName" />
+        app:layout_constraintTop_toBottomOf="@+id/UpdateContactLastName" />
 
     <Button
         android:id="@+id/UpdateContactButton"
@@ -63,15 +63,9 @@
         android:layout_marginRight="10dp"
         android:text="Update Le Contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/UpdateContactName" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top"
-        app:constraint_referenced_ids="contactName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

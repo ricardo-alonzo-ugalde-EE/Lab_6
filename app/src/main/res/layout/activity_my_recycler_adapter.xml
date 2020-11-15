@@ -22,11 +22,11 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="147dp"
-            android:layout_marginEnd="229dp"
-            android:layout_marginRight="229dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="97dp"
+            android:layout_marginEnd="217dp"
+            android:layout_marginRight="217dp"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="10dp" />
@@ -40,11 +40,11 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="false"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginEnd="230dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginEnd="214dp"
             android:layout_marginRight="44dp"
-            android:layout_marginBottom="339dp"
+            android:layout_marginBottom="387dp"
             android:hint="year"
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -59,15 +59,18 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="false"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginEnd="230dp"
+            android:layout_marginStart="203dp"
+            android:layout_marginLeft="203dp"
+            android:layout_marginEnd="45dp"
             android:layout_marginRight="44dp"
-            android:layout_marginBottom="230dp"
+            android:layout_marginBottom="476dp"
             android:hint="year"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="10dp" />
+
+
+
 
     </RelativeLayout>
 
