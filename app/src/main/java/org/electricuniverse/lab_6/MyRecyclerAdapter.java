@@ -49,30 +49,36 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         holder.name_v.setText("Name: "+ c.getName());
         holder.last_name_v.setText("Last Name: "+ c.getLastName());
         holder.phone_v.setText("Phone: "+ c.getPhoneNumber());
-        holder.itemView.setOnClickListener(v ->
+        holder.itemView.setOnClickListener(new View.OnClickListener()
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-            builder.setTitle("Chose option");
-            builder.setMessage("Update or delete user?");
-            builder.setPositiveButton( "Update", (dialog, which) ->
+            @Override
+            public void onClick(View view)
             {
-                goToUpdateActivity(c.getID());
-            });
-            builder.setNeutralButton( "Delete", (dialog, which) ->
-            {
-               MyDBHelper dbHelper = new MyDBHelper(mContext);
-               dbHelper.deleteContact(c.getID(), mContext);
-               mContactList.remove(position);
-               myRecyclerView.removeViewAt(position);
-               notifyItemRemoved(position);
-               notifyItemRangeChanged(position, mContactList.size());
-               notifyDataSetChanged();
-            });
-            builder.setNegativeButton("Cancel", (dialog, which) ->
-            {
-               dialog.dismiss();
-            });
-            builder.create().show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setTitle("Chose option");
+                builder.setMessage("Update or delete user?");
+                builder.setPositiveButton( "Update", (dialog, which) ->
+                {
+                    goToUpdateActivity(c.getID());
+                });
+                builder.setNeutralButton( "Delete", (dialog, which) ->
+                {
+                    MyDBHelper dbHelper = new MyDBHelper(mContext);
+                    dbHelper.deleteContact(c.getID(), mContext);
+                    mContactList.remove(position);
+                    myRecyclerView.removeViewAt(position);
+                    notifyItemRemoved(position);
+                    notifyItemRangeChanged(position, mContactList.size());
+                    notifyDataSetChanged();
+                });
+                builder.setNegativeButton("Cancel", (dialog, which) ->
+                {
+                    dialog.dismiss();
+                });
+                builder.create().show();
+            }
+
+
         });
 
 
@@ -126,9 +132,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         public ViewHolder(View view)
         {
             super(view);
-            name_v = (TextView)view.findViewById(R.id.name_view);
-            last_name_v = (TextView)view.findViewById(R.id.lastname_view);
-            phone_v = (TextView)view.findViewById(R.id.phone_number);
+            name_v = (TextView)view.findViewById(R.id.first_name_view);
+            last_name_v = (TextView)view.findViewById(R.id.last_name_view);
+            phone_v = (TextView)view.findViewById(R.id.phone_number_view);
 
         }
 

@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
+
 public class MyDBHelper extends SQLiteOpenHelper
 {
     public static final String DATABASE_NAME = "contacts.db";
@@ -102,12 +103,10 @@ public class MyDBHelper extends SQLiteOpenHelper
         Toast.makeText(context, "Deleted successfully.", Toast.LENGTH_SHORT).show();
     }
 
-    public void updateContact(long contactId, Context context, Contact contact)
-    {
+    public void updateContact(long contactId, Context context, Contact contact){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("UPDATE " +TABLE_NAME+" SET name ='" + contact.getName()
-                + "', lastname = '" + contact.getLastName() + "', phone = '" + contact.getPhoneNumber()
-                + "' WHERE _id= '" + contactId + "'");
-        Toast.makeText(context, "Updated Successfully", Toast.LENGTH_SHORT).show();
+        db.execSQL(" UPDATE " + TABLE_NAME + " SET name ='" + contact.getName() + "', lastname ='" +
+                contact.getLastName() + "', phone ='" + contact.getPhoneNumber() + "' WHERE _id='" + contactId + "'");
+        Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
     }
 }

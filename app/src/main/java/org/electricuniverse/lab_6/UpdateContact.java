@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+
+
+
 public class UpdateContact extends AppCompatActivity
 {
     private EditText mNameEditText;
@@ -35,7 +39,7 @@ public class UpdateContact extends AppCompatActivity
         window.setStatusBarColor(ContextCompat.getColor(UpdateContact.this, R.color.colorAccent));
 
         mNameEditText = (EditText)findViewById(R.id.UpdateContactName);
-        mLastNameEditText = (EditText)findViewById(R.id.UpdateContactName);
+        mLastNameEditText = (EditText)findViewById(R.id.UpdateContactLastName);
         mPhoneEditText = (EditText)findViewById(R.id.UpdateContactPhone);
         mUpdateBtn = (Button)findViewById(R.id.UpdateContactButton);
         dbHelper = new MyDBHelper(this);
@@ -54,7 +58,7 @@ public class UpdateContact extends AppCompatActivity
         mUpdateBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
+            public void onClick(View view)
             {
                 updateContact();
             }
