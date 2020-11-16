@@ -44,6 +44,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position)
     {
+
         final Contact c = mContactList.get(position);
         holder.name_v.setText("Name: "+ c.getName());
         holder.last_name_v.setText("Last Name: "+ c.getLastName());

@@ -9,48 +9,48 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/UpdateContactName"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="64dp"
         android:hint="Update Name"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/UpdateContactLastName"
+        android:id="@+id/updateContactLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_marginRight="10dp"
-        android:hint="Update Last Name"
+        android:hint="Update Lastname"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contactName" />
+        app:layout_constraintTop_toBottomOf="@+id/UpdateContactName" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/UpdateContactPhone"
         android:layout_width="wrap_content"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:textColorHint="@color/black"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:hint="Update Phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UpdateContactLastName" />
+        app:layout_constraintTop_toBottomOf="@+id/updateContactLastName" />
 
     <Button
         android:id="@+id/UpdateContactButton"
@@ -58,14 +58,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="Update Le Contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UpdateContactName" />
+        app:layout_constraintTop_toBottomOf="@+id/UpdateContactPhone" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

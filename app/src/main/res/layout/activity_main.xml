@@ -10,11 +10,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -27,7 +29,7 @@
         android:layout_marginLeft="200dp"
         android:layout_marginEnd="200dp"
         android:layout_marginRight="200dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="28dp"
         android:scaleType="center"
         android:src="@drawable/ic_ic_my_icon"
         app:fabSize="mini"
@@ -35,7 +37,7 @@
         app:layout_constraintEnd_toStartOf="@+id/mainRecyclerView"
 
 
-        app:layout_constraintHorizontal_bias="0.237"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

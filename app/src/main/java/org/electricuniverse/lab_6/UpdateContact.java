@@ -35,7 +35,7 @@ public class UpdateContact extends AppCompatActivity
         window.setStatusBarColor(ContextCompat.getColor(UpdateContact.this, R.color.colorAccent));
 
         mNameEditText = (EditText)findViewById(R.id.UpdateContactName);
-        mLastNameEditText = (EditText)findViewById(R.id.UpdateContactLastName);
+        mLastNameEditText = (EditText)findViewById(R.id.UpdateContactName);
         mPhoneEditText = (EditText)findViewById(R.id.UpdateContactPhone);
         mUpdateBtn = (Button)findViewById(R.id.UpdateContactButton);
         dbHelper = new MyDBHelper(this);
